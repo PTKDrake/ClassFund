@@ -31,23 +31,23 @@ export default defineNuxtRouteMiddleware(async (to) => {
 
   await fetchSession()
 
+  const routeBaseName = useRouteBaseName()
+  const routeName = routeBaseName(to) as string
+
   if (only === 'guest') {
-    if (loggedIn.value) {
+    if (loggedIn.value && routeName !== redirectUserTo) {
       return navigateTo(redirectUserTo)
     } else {
       // Allow guest access to this route
       return
     }
   }
-
   // If not authenticated, redirect to home
-  if (!loggedIn.value) {
-    return navigateTo(`${redirectGuestTo}?redirect=${to.fullPath}`)
+  if (!loggedIn.value && routeName !== redirectGuestTo) {
+    return navigateTo(redirectGuestTo)
   }
 
   // Admin Pages
-  const routeBaseName = useRouteBaseName()
-  const routeName = routeBaseName(to) as string
   if (routeName?.startsWith('admin') && user.value?.role != 'admin') {
     return navigateTo('/403')
   }
