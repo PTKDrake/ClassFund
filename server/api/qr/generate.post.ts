@@ -140,7 +140,7 @@ export default defineEventHandler(async (event) => {
     const qrContent = vietQR.build()
 
     // Read logo file from public directory (optimized for server-side)
-    const logoPath = path.join(process.cwd(), 'public', 'logo.png')
+    const logoPath = path.join(process.env.PWD || process.cwd(), 'public', 'logo.png')
     let logoDataUrl: string | undefined
 
     try {
