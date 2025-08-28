@@ -9,6 +9,7 @@ import nodeCanvas from 'canvas'
 import { JSDOM } from 'jsdom'
 import { eq, lt, sql } from 'drizzle-orm'
 import { useDB } from '~~/server/utils/db'
+import { logo } from '~~/server/utils/logo'
 
 // Database cache configuration
 const CACHE_TTL = 1000 * 60 * 30 // 30 minutes
@@ -139,19 +140,7 @@ export default defineEventHandler(async (event) => {
     // Build the QR content
     const qrContent = vietQR.build()
 
-    // Read logo file from public directory (optimized for server-side)
-    const logoPath = path.join(process.env.PWD || process.cwd(), 'public', 'logo.png')
-    let logoDataUrl: string | undefined
-
-    try {
-      if (fs.existsSync(logoPath)) {
-        const logoBuffer = fs.readFileSync(logoPath)
-        logoDataUrl = `data:image/png;base64,${logoBuffer.toString('base64')}`
-        // console.log('Logo loaded successfully, size:', logoBuffer.length, 'bytes')
-      }
-    } catch (error) {
-      console.warn('Could not load logo:', (error as Error).message)
-    }
+    let logoDataUrl: string | undefined = `data:image/png;base64,${logo}`
 
     // Create QR code with styling (optimized for Node.js environment)
     const qrCodeStyling = new QRCodeStyling({
