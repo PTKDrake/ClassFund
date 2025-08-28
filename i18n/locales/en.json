@@ -1,0 +1,409 @@
+{
+  "common": {
+    "backHome": "Back to homepage",
+    "cancel": "Cancel",
+    "success": "Success",
+    "error": "Error",
+    "notice": "Notice"
+  },
+  "brand": {
+    "name": "Class Fund TTM63",
+    "university": "Vietnam Marine University",
+    "copyright": "Class Fund Management System - PTKDrake"
+  },
+  "meta": {
+    "title": "Class Fund Management - TTM63",
+    "description": "Class fund management system for TTM63 - Vimaru",
+    "errorTitle": "Error {code} - Class Fund Management"
+  },
+  "error": {
+    "unexpected": "An unexpected error occurred in the system",
+    "title": {
+      "404": "Page not found",
+      "403": "Access denied",
+      "500": "Server error",
+      "default": "An error occurred"
+    },
+    "desc": {
+      "404": "The page you are looking for does not exist or has been moved. Please check the URL.",
+      "403": "You do not have permission to access this page. Please sign in or contact an administrator.",
+      "500": "The server is experiencing technical issues. We're working to restore service as soon as possible.",
+      "default": "The system is experiencing temporary issues. Please try again later or contact support."
+    },
+    "supportInfo": "If the error persists, please contact your class representative for support"
+  },
+  "login": {
+    "title": "Sign in",
+    "welcomeTitle": "Welcome! 👋",
+    "welcomeDesc": "Use Google account with email {'@'}st.vimaru.edu.vn to sign in",
+    "buttonGoogle": "Sign in with Google",
+    "securityTitle": "🔒 Security & Safety",
+    "securityDesc": "The system uses Google OAuth for strong security and only allows access with school email.",
+    "toast": {
+      "signInErrorTitle": "Sign-in error",
+      "signInErrorDesc": "Unable to sign in. Please try again."
+    }
+  },
+  "layout": {
+    "admin": "Admin",
+    "logout": "Sign out"
+  },
+  "home": {
+    "hero": {
+      "title": "TTM63 Class Fund System",
+      "welcome": "🎓 Welcome {lastName} {firstName}",
+      "subtitle": "Manage class fund contributions smartly and efficiently"
+    },
+    "loading": {
+      "title": "Checking status...",
+      "subtitle": "Please wait a moment"
+    },
+    "error": {
+      "title": "An error occurred",
+      "subtitle": "Unable to check payment status",
+      "hint": "💡 Please inform your class representative or try again later"
+    },
+    "notFound": {
+      "title": "Not in the list",
+      "subtitle": "Your information has not been added to the class fund list yet.",
+      "infoTitle": "Important information:",
+      "infoDesc": "Please contact your class representative to be added to the list.",
+      "yourInfoTitle": "Your info:"
+    },
+    "paid": {
+      "title": "🎉 Payment successful!",
+      "subtitle": "Thank you for contributing to the TTM63 class fund",
+      "amount": "Paid: {amount}"
+    },
+    "payment": {
+      "title": "💳 Class fund payment",
+      "subtitle": "Scan the QR code to make a payment"
+    },
+    "qr": {
+      "description": "{order} - {studentId} - {fullName} - FundTTM63",
+      "loading": "Generating QR code...",
+      "error": "QR generation error",
+      "empty": "No QR code yet",
+      "alt": "Payment QR Code"
+    },
+    "actions": {
+      "downloadQR": "Download QR code",
+      "refreshQR": "Refresh QR code"
+    },
+    "details": {
+      "title": "Payment details",
+      "order": "Order no:",
+      "name": "Full name:",
+      "amount": "Amount:",
+      "destinationAccount": "Destination account",
+      "bankName": "Bank name:",
+      "accountNumber": "Account number:",
+      "accountHolder": "Account holder:"
+    },
+    "instructions": {
+      "title": "📋 Payment instructions:",
+      "step1": "• Open your mobile banking app",
+      "step2": "• Choose \"Scan QR\" or \"Transfer\"",
+      "step3": "• Scan the QR code",
+      "step4": "• Verify details and confirm payment",
+      "step5": "• Wait for status to be updated"
+    },
+    "toasts": {
+      "qrLoadErrorTitle": "QR load error",
+      "qrLoadErrorDesc": "Unable to load payment QR code. Please try again later.",
+      "alreadyPaidTitle": "Notice",
+      "alreadyPaidDescNew": "You have already paid, no need to generate a new QR",
+      "alreadyPaidDescNoQR": "You have already paid, QR code not needed",
+      "refreshSuccessTitle": "Success",
+      "refreshSuccessDesc": "QR code refreshed",
+      "refreshErrorTitle": "Error",
+      "refreshErrorDesc": "Unable to refresh QR code",
+      "noQrTitle": "Error",
+      "noQrDesc": "No QR code to download",
+      "downloadSuccessTitle": "Success",
+      "downloadSuccessDesc": "QR code downloaded",
+      "downloadErrorTitle": "Error",
+      "downloadErrorDesc": "Unable to download QR code"
+    }
+  },
+  "admin": {
+    "header": {
+      "title": "Student management",
+      "subtitle": "TTM63 class fund contributors list"
+    },
+    "buttons": {
+      "import": "Import Excel/CSV",
+      "addStudent": "Add student",
+      "addFirst": "Add first student"
+    },
+    "stats": {
+      "total": "Total students",
+      "paid": "Paid",
+      "unpaid": "Unpaid"
+    },
+    "table": {
+      "headerTitle": "Students list",
+      "headerSubtitle": "Manage student info and payment status",
+      "columns": {
+        "order": "No.",
+        "studentId": "Student ID",
+        "fullName": "Full name",
+        "status": "Status",
+        "actions": "Actions",
+        "paid": "Paid",
+        "unpaid": "Unpaid"
+      }
+    },
+    "search": {
+      "placeholder": "Search students...",
+      "filterPlaceholder": "Filter status",
+      "all": "All statuses",
+      "paid": "Paid",
+      "unpaid": "Unpaid"
+    },
+    "loading": {
+      "title": "Loading list...",
+      "subtitle": "Please wait a moment"
+    },
+    "error": {
+      "title": "Load error",
+      "subtitle": "Unable to load students"
+    },
+    "empty": {
+      "title": "Empty list",
+      "subtitle": "No students yet"
+    },
+    "dropdown": {
+      "editInfo": "Edit info",
+      "markUnpaid": "Mark as unpaid",
+      "markPaid": "Mark as paid",
+      "delete": "Delete student"
+    },
+    "confirm": {
+      "markPaid": "Mark {count} students as paid?",
+      "markUnpaid": "Mark {count} students as unpaid?",
+      "deleteMany": "DELETE {count} students? This action cannot be undone!",
+      "deleteOne": "Are you sure you want to delete this student?"
+    },
+    "toasts": {
+      "updated": "Student info updated",
+      "created": "Student created",
+      "deletedOne": "Student deleted",
+      "deletedMany": "Deleted {count} students",
+      "statusUpdated": "Marked {status} for {name}",
+      "markedPaidMany": "Marked {count} students as paid",
+      "markedUnpaidMany": "Marked {count} students as unpaid",
+      "cannotUpdateStatus": "Unable to update status",
+      "cannotDelete": "Unable to delete student",
+      "cannotSave": "Unable to save student info",
+      "imported": "Imported {count} students",
+      "cannotImport": "Unable to import students"
+    }
+  },
+  "import": {
+    "title": "Import student list",
+    "description": "Import students from Excel/CSV or paste from clipboard with format: STT|MSV|HOTEN",
+    "file": {
+      "choose": "Choose a file to import",
+      "dragOr": "Drag & drop file or",
+      "chooseFile": "choose file",
+      "support": "Supports .xlsx, .xls, .csv (max 5MB)",
+      "remove": "Remove file"
+    },
+    "formatGuide": {
+      "title": "Required file format:",
+      "line1": "• Excel (.xlsx, .xls) or CSV (.csv) file",
+      "line2": "• 3 columns: STT | MSV | HOTEN or STT | MSV | Full name",
+      "line3": "• Header can be upper or lower case",
+      "line4": "• First row is header, data starts from row 2"
+    },
+    "clipboard": {
+      "title": "Paste data from clipboard",
+      "placeholder": "Paste your data here...\nExample:\n1\t94901\tNguyen Van An\n2\t94902\tTran Thi Binh\n3\t94903\tLe Van Cuong"
+    },
+    "headerToggle": {
+      "title": "First row is header",
+      "subtitle": "Skip the first row"
+    },
+    "clipboardGuide": {
+      "title": "Clipboard instructions:",
+      "line1": "• Copying from Excel/Google Sheets will be tab-separated",
+      "line2": "• 3 columns: STT [Tab] MSV [Tab] HOTEN",
+      "line3": "• Header row can be present or not",
+      "line4": "• One student per line"
+    },
+    "preview": {
+      "title": "Preview ({count} students)",
+      "errorsBadge": "{count} errors",
+      "valid": "Valid",
+      "summaryTitle": "There are {count} errors to fix:",
+      "summaryRest": "... and {rest} more errors",
+      "table": {
+        "order": "No.",
+        "studentId": "Student ID",
+        "fullName": "Full name",
+        "status": "Status"
+      }
+    },
+    "options": {
+      "title": "Import options",
+      "subtitle": "Choose how to handle duplicates",
+      "modes": {
+        "skip": "Create new (skip duplicates)",
+        "update": "Update (overwrite duplicates)",
+        "replace": "Replace all"
+      }
+    },
+    "footer": {
+      "cancel": "Cancel",
+      "import": "Import {count} students"
+    },
+    "validation": {
+      "studentIdRequired": "Student ID is required",
+      "fullNameRequired": "Full name is required",
+      "orderPositive": "Order must be a positive number",
+      "studentIdTooLong": "Student ID too long (>20 chars)",
+      "fullNameTooLong": "Full name too long (>100 chars)",
+      "missingColumns": "Missing columns (at least 3 required)"
+    }
+  },
+  "studentModal": {
+    "title": {
+      "edit": "Edit student",
+      "add": "Add new student"
+    },
+    "description": {
+      "edit": "Update student information in the list",
+      "add": "Add a new student to the class fund list"
+    },
+    "fields": {
+      "order": {
+        "label": "Order",
+        "placeholder": "Enter order number (e.g. 1, 2, 3...)",
+        "hint": "📝 Order for sorting the students list"
+      },
+      "studentId": {
+        "label": "Student ID",
+        "placeholder": "Enter student ID (e.g. 94903)"
+      },
+      "fullName": {
+        "label": "Full name",
+        "placeholder": "e.g. Nguyen Van A"
+      },
+      "hasPaid": {
+        "label": "Payment status",
+        "paid": "Paid",
+        "unpaid": "Unpaid",
+        "paidDesc": "Student has completed payment",
+        "unpaidDesc": "Student has not paid"
+      }
+    },
+    "footer": {
+      "cancel": "Cancel",
+      "update": "Update",
+      "add": "Create"
+    },
+    "validation": {
+      "orderMin": "Order must be greater than 0",
+      "orderMax": "Order must be less than 1000",
+      "studentIdRequired": "Please enter a student ID",
+      "studentIdTooLong": "Student ID too long",
+      "fullNameRequired": "Please enter full name",
+      "fullNameTooLong": "Full name too long"
+    }
+  },
+  "testModal": {
+    "title": "Test modal",
+    "fields": {
+      "order": "Order",
+      "studentId": "Student ID",
+      "fullName": "Full name",
+      "hasPaid": "Paid"
+    },
+    "footer": {
+      "dismiss": "Dismiss",
+      "success": "Success"
+    }
+  },
+  "settings": {
+    "title": "System Settings",
+    "subtitle": "Configure bank account and payment settings",
+    "bankAccount": {
+      "title": "Bank Account Configuration",
+      "subtitle": "Set up the destination bank account for payments",
+      "bankName": "Bank Name",
+      "selectBank": "Select a bank",
+      "bankNameHint": "Choose the bank for the destination account",
+      "accountNumber": "Account Number",
+      "accountNumberPlaceholder": "Enter account number",
+      "accountNumberHint": "The destination account number for payments",
+      "accountHolder": "Account Holder Name",
+      "accountHolderPlaceholder": "Enter account holder name",
+      "accountHolderHint": "Name of the account holder",
+      "paymentAmount": "Payment Amount (VNĐ)",
+      "paymentAmountPlaceholder": "Enter payment amount",
+      "paymentAmountHint": "Default payment amount for QR codes"
+    },
+    "preview": {
+      "title": "Current Settings Preview",
+      "bankName": "Bank Name",
+      "accountNumber": "Account Number",
+      "accountHolder": "Account Holder",
+      "paymentAmount": "Payment Amount"
+    },
+    "actions": {
+      "save": "Save Settings",
+      "reset": "Reset"
+    },
+    "success": {
+      "title": "Settings Saved",
+      "desc": "Bank account settings have been updated successfully"
+    },
+    "errors": {
+      "loadBanksTitle": "Error Loading Banks",
+      "loadBanksDesc": "Unable to load bank list. Please refresh the page.",
+      "invalidFormTitle": "Invalid Form",
+      "invalidFormDesc": "Please fill in all required fields correctly.",
+      "saveTitle": "Save Error",
+      "saveDesc": "Unable to save settings. Please try again."
+    }
+  },
+  "server": {
+    "errors": {
+      "unauthorized": "Unauthorized",
+      "forbidden": "Forbidden",
+      "invalidRequestPayload": "Invalid request payload",
+      "guardsMustBeArray": "Guards must be an array",
+      "duplicateStudentId": "Duplicate student ID"
+    },
+    "api": {
+      "unauthorizedNoSession": "Unauthorized - No session token",
+      "invalidStudentsData": "Invalid students data",
+      "noStudentsToImport": "No students to import",
+      "missingFieldsIndex": "Missing required fields for student at index {index}",
+      "invalidOrderIndex": "Invalid order number for student at index {index}",
+      "studentIdTooLongIndex": "Student ID too long for student at index {index}",
+      "fullNameTooLongIndex": "Full name too long for student at index {index}",
+      "importSkippedDuplicates": "Skipped {count} duplicate students",
+      "importSuccess": "Import successful: {created} created, {updated} updated",
+      "duplicateStudentIdFound": "Duplicate student ID found",
+      "failedImportStudents": "Failed to import students: {message}",
+      "studentRecordIdRequired": "Student record ID is required",
+      "studentRecordNotFound": "Student record not found",
+      "failedUpdateStudentRecord": "Failed to update student record",
+      "studentIdAndFullNameRequired": "Student ID and full name are required",
+      "failedCreateStudentRecord": "Failed to create student record",
+      "failedDeleteStudentRecord": "Failed to delete student record",
+      "studentIdRequired": "Student ID is required",
+      "failedFetchStudent": "Failed to fetch student",
+      "qrMissingDescription": "Missing required field: description (must be non-empty string)",
+      "qrFailedGenerate": "Failed to generate QR code",
+      "failedFetchStats": "Failed to fetch student statistics",
+      "failedFetchSettings": "Failed to fetch settings",
+      "settingsNotFound": "Settings not found",
+      "failedSaveSettings": "Failed to save settings",
+      "invalidSettingsData": "Invalid settings data",
+      "invalidPaymentAmount": "Invalid payment amount"
+    }
+  }
+}

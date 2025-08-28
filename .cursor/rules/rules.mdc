@@ -1,0 +1,10 @@
+---
+alwaysApply: true
+---
+0. Luôn xây dựng theo cấu trúc Nuxt 4.
+1. Luôn sử dụng Tailwind CSS và Nuxt UI components.
+2. Khi cần điều chỉnh env:
+Hãy hỏi trước, không tự ý điều chỉnh env.
+3. Sau khi điều chỉnh Drizzle schema, cần chạy lệnh:
+pnpm run db:generate
+pnpm run db:migrate

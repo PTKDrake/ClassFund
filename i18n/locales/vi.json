@@ -1,0 +1,409 @@
+{
+  "common": {
+    "backHome": "Về trang chủ",
+    "cancel": "Hủy bỏ",
+    "success": "Thành công",
+    "error": "Lỗi",
+    "notice": "Thông báo"
+  },
+  "brand": {
+    "name": "Class Fund TTM63",
+    "university": "Vietnam Marine University",
+    "copyright": "Class Fund Management System - PTKDrake"
+  },
+  "meta": {
+    "title": "Class Fund Management - TTM63",
+    "description": "Hệ thống quản lý quỹ lớp TTM63 - Vimaru",
+    "errorTitle": "Lỗi {code} - Class Fund Management"
+  },
+  "error": {
+    "unexpected": "Đã xảy ra lỗi không mong muốn trong hệ thống",
+    "title": {
+      "404": "Không tìm thấy trang",
+      "403": "Truy cập bị từ chối",
+      "500": "Lỗi máy chủ",
+      "default": "Có lỗi xảy ra"
+    },
+    "desc": {
+      "404": "Trang bạn đang tìm kiếm không tồn tại hoặc đã được di chuyển. Vui lòng kiểm tra lại địa chỉ URL.",
+      "403": "Bạn không có quyền truy cập vào trang này. Vui lòng đăng nhập hoặc liên hệ quản trị viên.",
+      "500": "Máy chủ đang gặp sự cố kỹ thuật. Chúng tôi đang khắc phục và sẽ hoạt động trở lại sớm nhất có thể.",
+      "default": "Hệ thống đang gặp vấn đề tạm thời. Vui lòng thử lại sau ít phút hoặc liên hệ hỗ trợ."
+    },
+    "supportInfo": "Nếu lỗi vẫn tiếp tục, vui lòng liên hệ với cán bộ lớp để được hỗ trợ"
+  },
+  "login": {
+    "title": "Đăng nhập hệ thống",
+    "welcomeTitle": "Chào mừng bạn! 👋",
+    "welcomeDesc": "Sử dụng tài khoản Google với email {'@'}st.vimaru.edu.vn để đăng nhập",
+    "buttonGoogle": "Đăng nhập bằng Google",
+    "securityTitle": "🔒 Bảo mật & An toàn",
+    "securityDesc": "Hệ thống sử dụng Google OAuth để đảm bảo tính bảo mật cao và chỉ cho phép truy cập với email trường.",
+    "toast": {
+      "signInErrorTitle": "Lỗi đăng nhập",
+      "signInErrorDesc": "Không thể đăng nhập. Vui lòng thử lại."
+    }
+  },
+  "layout": {
+    "admin": "Quản lý",
+    "logout": "Đăng xuất"
+  },
+  "home": {
+    "hero": {
+      "title": "Hệ thống quỹ lớp TTM63",
+      "welcome": "🎓 Chào mừng {lastName} {firstName}",
+      "subtitle": "Quản lý đóng góp quỹ lớp thông minh và hiệu quả"
+    },
+    "loading": {
+      "title": "Đang kiểm tra trạng thái...",
+      "subtitle": "Vui lòng chờ trong giây lát"
+    },
+    "error": {
+      "title": "Đã có lỗi xảy ra",
+      "subtitle": "Không thể kiểm tra trạng thái thanh toán",
+      "hint": "💡 Hãy báo lại cho cán bộ lớp hoặc thử lại sau"
+    },
+    "notFound": {
+      "title": "Chưa có trong danh sách",
+      "subtitle": "Thông tin của bạn chưa được thêm vào danh sách đóng quỹ lớp.",
+      "infoTitle": "Thông tin cần biết:",
+      "infoDesc": "Hãy liên hệ với cán bộ lớp để được thêm vào danh sách đóng quỹ.",
+      "yourInfoTitle": "Thông tin của bạn:"
+    },
+    "paid": {
+      "title": "🎉 Đóng quỹ lớp thành công!",
+      "subtitle": "Cảm ơn bạn đã đóng góp vào quỹ lớp TTM63",
+      "amount": "Đã thanh toán: {amount}"
+    },
+    "payment": {
+      "title": "💳 Thanh toán quỹ lớp",
+      "subtitle": "Quét mã QR để thực hiện thanh toán"
+    },
+    "qr": {
+      "description": "{order} - {studentId} - {fullName} - QuyTTM63",
+      "loading": "Đang tạo mã QR...",
+      "error": "Lỗi tạo mã QR",
+      "empty": "Chưa có mã QR",
+      "alt": "QR Code thanh toán"
+    },
+    "actions": {
+      "downloadQR": "Tải xuống mã QR",
+      "refreshQR": "Làm mới mã QR"
+    },
+    "details": {
+      "title": "Thông tin thanh toán",
+      "order": "Số thứ tự:",
+      "name": "Họ tên:",
+      "amount": "Số tiền:",
+      "destinationAccount": "Tài khoản đích",
+      "bankName": "Tên ngân hàng:",
+      "accountNumber": "Số tài khoản:",
+      "accountHolder": "Tên chủ tài khoản:"
+    },
+    "instructions": {
+      "title": "📋 Hướng dẫn thanh toán:",
+      "step1": "• Mở ứng dụng ngân hàng trên điện thoại",
+      "step2": "• Chọn \"Quét mã QR\" hoặc \"Chuyển khoản\"",
+      "step3": "• Quét mã QR bên cạnh",
+      "step4": "• Kiểm tra thông tin và xác nhận thanh toán",
+      "step5": "• Chờ cán bộ lớp cập nhật trạng thái"
+    },
+    "toasts": {
+      "qrLoadErrorTitle": "Lỗi tải mã QR",
+      "qrLoadErrorDesc": "Không thể tải mã QR thanh toán. Vui lòng thử lại sau.",
+      "alreadyPaidTitle": "Thông báo",
+      "alreadyPaidDescNew": "Bạn đã thanh toán rồi, không cần tạo mã QR mới",
+      "alreadyPaidDescNoQR": "Bạn đã thanh toán rồi, không cần mã QR",
+      "refreshSuccessTitle": "Thành công",
+      "refreshSuccessDesc": "Mã QR đã được làm mới",
+      "refreshErrorTitle": "Lỗi",
+      "refreshErrorDesc": "Không thể làm mới mã QR",
+      "noQrTitle": "Lỗi",
+      "noQrDesc": "Không có mã QR để tải xuống",
+      "downloadSuccessTitle": "Thành công",
+      "downloadSuccessDesc": "Mã QR đã được tải xuống",
+      "downloadErrorTitle": "Lỗi",
+      "downloadErrorDesc": "Không thể tải xuống mã QR"
+    }
+  },
+  "admin": {
+    "header": {
+      "title": "Quản lý sinh viên",
+      "subtitle": "Danh sách đóng góp quỹ lớp TTM63"
+    },
+    "buttons": {
+      "import": "Import Excel/CSV",
+      "addStudent": "Thêm sinh viên",
+      "addFirst": "Thêm sinh viên đầu tiên"
+    },
+    "stats": {
+      "total": "Tổng sinh viên",
+      "paid": "Đã đóng",
+      "unpaid": "Chưa đóng"
+    },
+    "table": {
+      "headerTitle": "Danh sách sinh viên",
+      "headerSubtitle": "Quản lý thông tin và trạng thái thanh toán",
+      "columns": {
+        "order": "STT",
+        "studentId": "Mã số SV",
+        "fullName": "Họ và tên",
+        "status": "Trạng thái",
+        "actions": "Hành động",
+        "paid": "Đã đóng",
+        "unpaid": "Chưa đóng"
+      }
+    },
+    "search": {
+      "placeholder": "Tìm kiếm sinh viên...",
+      "filterPlaceholder": "Lọc trạng thái",
+      "all": "Tất cả trạng thái",
+      "paid": "Đã đóng",
+      "unpaid": "Chưa đóng"
+    },
+    "loading": {
+      "title": "Đang tải danh sách...",
+      "subtitle": "Vui lòng chờ trong giây lát"
+    },
+    "error": {
+      "title": "Lỗi tải dữ liệu",
+      "subtitle": "Không thể tải danh sách sinh viên"
+    },
+    "empty": {
+      "title": "Danh sách trống",
+      "subtitle": "Chưa có sinh viên nào trong danh sách"
+    },
+    "dropdown": {
+      "editInfo": "Chỉnh sửa thông tin",
+      "markUnpaid": "Đánh dấu chưa đóng",
+      "markPaid": "Đánh dấu đã đóng",
+      "delete": "Xóa sinh viên"
+    },
+    "confirm": {
+      "markPaid": "Đánh dấu {count} sinh viên đã đóng tiền?",
+      "markUnpaid": "Đánh dấu {count} sinh viên chưa đóng tiền?",
+      "deleteMany": "XÓA {count} sinh viên? Hành động này không thể hoàn tác!",
+      "deleteOne": "Bạn có chắc chắn muốn xóa sinh viên này?"
+    },
+    "toasts": {
+      "updated": "Đã cập nhật thông tin sinh viên",
+      "created": "Đã thêm sinh viên mới",
+      "deletedOne": "Đã xóa sinh viên",
+      "deletedMany": "Đã xóa {count} sinh viên",
+      "statusUpdated": "Đã {status} cho {name}",
+      "markedPaidMany": "Đã đánh dấu {count} sinh viên đã đóng tiền",
+      "markedUnpaidMany": "Đã đánh dấu {count} sinh viên chưa đóng tiền",
+      "cannotUpdateStatus": "Không thể cập nhật trạng thái",
+      "cannotDelete": "Không thể xóa sinh viên",
+      "cannotSave": "Không thể lưu thông tin sinh viên",
+      "imported": "Đã import {count} sinh viên",
+      "cannotImport": "Không thể import danh sách sinh viên"
+    }
+  },
+  "import": {
+    "title": "Import danh sách sinh viên",
+    "description": "Import sinh viên từ file Excel/CSV hoặc paste từ clipboard với format: STT|MSV|HOTEN",
+    "file": {
+      "choose": "Chọn file để import",
+      "dragOr": "Kéo thả file hoặc",
+      "chooseFile": "chọn file",
+      "support": "Hỗ trợ .xlsx, .xls, .csv (tối đa 5MB)",
+      "remove": "Xóa file"
+    },
+    "formatGuide": {
+      "title": "Format file yêu cầu:",
+      "line1": "• File Excel (.xlsx, .xls) hoặc CSV (.csv)",
+      "line2": "• 3 cột: STT | MSV | HOTEN hoặc STT | MSV | Họ tên",
+      "line3": "• Cho phép header chữ hoa hoặc thường",
+      "line4": "• Dòng đầu tiên là header, dữ liệu bắt đầu từ dòng 2"
+    },
+    "clipboard": {
+      "title": "Paste dữ liệu từ clipboard",
+      "placeholder": "Paste dữ liệu ở đây...\nVí dụ:\n1\t94901\tNguyễn Văn An\n2\t94902\tTrần Thị Bình\n3\t94903\tLê Văn Cường"
+    },
+    "headerToggle": {
+      "title": "Dòng đầu là header",
+      "subtitle": "Bỏ qua dòng đầu tiên"
+    },
+    "clipboardGuide": {
+      "title": "Hướng dẫn paste dữ liệu:",
+      "line1": "• Copy từ Excel/Google Sheets sẽ tự động ngăn cách bằng Tab",
+      "line2": "• 3 cột: STT [Tab] MSV [Tab] HOTEN",
+      "line3": "• Có thể có hoặc không có header row",
+      "line4": "• Mỗi sinh viên trên một dòng riêng"
+    },
+    "preview": {
+      "title": "Xem trước dữ liệu ({count} sinh viên)",
+      "errorsBadge": "{count} lỗi",
+      "valid": "Hợp lệ",
+      "summaryTitle": "Có {count} lỗi cần sửa:",
+      "summaryRest": "... và {rest} lỗi khác",
+      "table": {
+        "order": "STT",
+        "studentId": "MSV",
+        "fullName": "Họ tên",
+        "status": "Trạng thái"
+      }
+    },
+    "options": {
+      "title": "Tùy chọn import",
+      "subtitle": "Chọn cách xử lý dữ liệu trùng lặp",
+      "modes": {
+        "skip": "Thêm mới (bỏ qua trùng lặp)",
+        "update": "Cập nhật (ghi đè trùng lặp)",
+        "replace": "Thay thế toàn bộ"
+      }
+    },
+    "footer": {
+      "cancel": "Hủy bỏ",
+      "import": "Import {count} sinh viên"
+    },
+    "validation": {
+      "studentIdRequired": "MSV không được để trống",
+      "fullNameRequired": "Họ tên không được để trống",
+      "orderPositive": "STT phải là số dương",
+      "studentIdTooLong": "MSV quá dài (>20 ký tự)",
+      "fullNameTooLong": "Họ tên quá dài (>100 ký tự)",
+      "missingColumns": "Thiếu cột dữ liệu (cần ít nhất 3 cột)"
+    }
+  },
+  "studentModal": {
+    "title": {
+      "edit": "Chỉnh sửa sinh viên",
+      "add": "Thêm sinh viên mới"
+    },
+    "description": {
+      "edit": "Cập nhật thông tin sinh viên trong danh sách",
+      "add": "Thêm sinh viên mới vào danh sách quỹ lớp"
+    },
+    "fields": {
+      "order": {
+        "label": "Số thứ tự",
+        "placeholder": "Nhập số thứ tự (VD: 1, 2, 3...)",
+        "hint": "📝 Số thứ tự sắp xếp danh sách sinh viên"
+      },
+      "studentId": {
+        "label": "Mã số sinh viên",
+        "placeholder": "Nhập mã số sinh viên (VD: 94903)"
+      },
+      "fullName": {
+        "label": "Họ và tên",
+        "placeholder": "VD: Nguyễn Văn A"
+      },
+      "hasPaid": {
+        "label": "Trạng thái thanh toán",
+        "paid": "Đã đóng tiền",
+        "unpaid": "Chưa đóng tiền",
+        "paidDesc": "Sinh viên đã hoàn thành thanh toán",
+        "unpaidDesc": "Sinh viên chưa thanh toán"
+      }
+    },
+    "footer": {
+      "cancel": "Hủy bỏ",
+      "update": "Cập nhật",
+      "add": "Thêm mới"
+    },
+    "validation": {
+      "orderMin": "Số thứ tự phải lớn hơn 0",
+      "orderMax": "Số thứ tự phải nhỏ hơn 1000",
+      "studentIdRequired": "Vui lòng nhập mã số sinh viên",
+      "studentIdTooLong": "Mã số sinh viên quá dài",
+      "fullNameRequired": "Vui lòng nhập họ và tên",
+      "fullNameTooLong": "Họ tên quá dài"
+    }
+  },
+  "testModal": {
+    "title": "Hộp thoại kiểm thử",
+    "fields": {
+      "order": "Số thứ tự",
+      "studentId": "Mã số sinh viên",
+      "fullName": "Họ và tên",
+      "hasPaid": "Đã thanh toán"
+    },
+    "footer": {
+      "dismiss": "Đóng",
+      "success": "Xác nhận"
+    }
+  },
+  "settings": {
+    "title": "Cài đặt hệ thống",
+    "subtitle": "Cấu hình thông tin tài khoản ngân hàng và thanh toán",
+    "bankAccount": {
+      "title": "Cấu hình tài khoản ngân hàng",
+      "subtitle": "Thiết lập tài khoản ngân hàng đích cho thanh toán",
+      "bankName": "Tên ngân hàng",
+      "selectBank": "Chọn ngân hàng",
+      "bankNameHint": "Chọn ngân hàng cho tài khoản đích",
+      "accountNumber": "Số tài khoản",
+      "accountNumberPlaceholder": "Nhập số tài khoản",
+      "accountNumberHint": "Số tài khoản đích cho thanh toán",
+      "accountHolder": "Tên chủ tài khoản",
+      "accountHolderPlaceholder": "Nhập tên chủ tài khoản",
+      "accountHolderHint": "Tên của chủ tài khoản",
+      "paymentAmount": "Số tiền thanh toán (VNĐ)",
+      "paymentAmountPlaceholder": "Nhập số tiền thanh toán",
+      "paymentAmountHint": "Số tiền mặc định cho mã QR"
+    },
+    "preview": {
+      "title": "Xem trước cài đặt hiện tại",
+      "bankName": "Tên ngân hàng",
+      "accountNumber": "Số tài khoản",
+      "accountHolder": "Tên chủ tài khoản",
+      "paymentAmount": "Số tiền thanh toán"
+    },
+    "actions": {
+      "save": "Lưu cài đặt",
+      "reset": "Đặt lại"
+    },
+    "success": {
+      "title": "Đã lưu cài đặt",
+      "desc": "Cài đặt tài khoản ngân hàng đã được cập nhật thành công"
+    },
+    "errors": {
+      "loadBanksTitle": "Lỗi tải danh sách ngân hàng",
+      "loadBanksDesc": "Không thể tải danh sách ngân hàng. Vui lòng làm mới trang.",
+      "invalidFormTitle": "Form không hợp lệ",
+      "invalidFormDesc": "Vui lòng điền đầy đủ các trường bắt buộc.",
+      "saveTitle": "Lỗi lưu",
+      "saveDesc": "Không thể lưu cài đặt. Vui lòng thử lại."
+    }
+  },
+  "server": {
+    "errors": {
+      "unauthorized": "Không được phép",
+      "forbidden": "Bị cấm",
+      "invalidRequestPayload": "Dữ liệu yêu cầu không hợp lệ",
+      "guardsMustBeArray": "Guards phải là một mảng",
+      "duplicateStudentId": "Trùng mã sinh viên"
+    },
+    "api": {
+      "unauthorizedNoSession": "Không được phép - Không có phiên đăng nhập",
+      "invalidStudentsData": "Dữ liệu sinh viên không hợp lệ",
+      "noStudentsToImport": "Không có sinh viên để import",
+      "missingFieldsIndex": "Thiếu thông tin bắt buộc cho sinh viên ở vị trí {index}",
+      "invalidOrderIndex": "Số thứ tự không hợp lệ cho sinh viên ở vị trí {index}",
+      "studentIdTooLongIndex": "Mã sinh viên quá dài cho sinh viên ở vị trí {index}",
+      "fullNameTooLongIndex": "Họ tên quá dài cho sinh viên ở vị trí {index}",
+      "importSkippedDuplicates": "Đã bỏ qua {count} sinh viên trùng lặp",
+      "importSuccess": "Import thành công: {created} sinh viên mới, {updated} sinh viên cập nhật",
+      "duplicateStudentIdFound": "Đã tìm thấy mã sinh viên trùng lặp",
+      "failedImportStudents": "Không thể import sinh viên: {message}",
+      "studentRecordIdRequired": "Yêu cầu ID bản ghi sinh viên",
+      "studentRecordNotFound": "Không tìm thấy bản ghi sinh viên",
+      "failedUpdateStudentRecord": "Không thể cập nhật bản ghi sinh viên",
+      "studentIdAndFullNameRequired": "Yêu cầu mã sinh viên và họ tên",
+      "failedCreateStudentRecord": "Không thể tạo bản ghi sinh viên",
+      "failedDeleteStudentRecord": "Không thể xóa bản ghi sinh viên",
+      "studentIdRequired": "Yêu cầu mã sinh viên",
+      "failedFetchStudent": "Không thể lấy thông tin sinh viên",
+      "qrMissingDescription": "Thiếu trường bắt buộc: description (chuỗi không rỗng)",
+      "qrFailedGenerate": "Không thể tạo mã QR",
+      "failedFetchStats": "Không thể lấy thống kê sinh viên",
+      "failedFetchSettings": "Không thể lấy cài đặt",
+      "settingsNotFound": "Không tìm thấy cài đặt",
+      "failedSaveSettings": "Không thể lưu cài đặt",
+      "invalidSettingsData": "Dữ liệu cài đặt không hợp lệ",
+      "invalidPaymentAmount": "Số tiền thanh toán không hợp lệ"
+    }
+  }
+}
