@@ -140,7 +140,8 @@ export default defineEventHandler(async (event) => {
     const qrContent = vietQR.build()
 
     // Read logo file from public directory (optimized for server-side)
-    const logoPath = path.join(process.cwd(), 'public', 'logo.png')
+    // Use __dirname for more reliable path resolution in PM2
+    const logoPath = path.join(__dirname, '..', '..', '..', 'public', 'logo.png')
     let logoDataUrl: string | undefined
 
     try {
@@ -148,6 +149,14 @@ export default defineEventHandler(async (event) => {
         const logoBuffer = fs.readFileSync(logoPath)
         logoDataUrl = `data:image/png;base64,${logoBuffer.toString('base64')}`
         // console.log('Logo loaded successfully, size:', logoBuffer.length, 'bytes')
+      } else {
+        // Fallback to process.cwd() if __dirname path doesn't work
+        const fallbackPath = path.join(process.cwd(), 'public', 'logo.png')
+        if (fs.existsSync(fallbackPath)) {
+          const logoBuffer = fs.readFileSync(fallbackPath)
+          logoDataUrl = `data:image/png;base64,${logoBuffer.toString('base64')}`
+          console.log('Logo loaded using fallback path')
+        }
       }
     } catch (error) {
       console.warn('Could not load logo:', (error as Error).message)
