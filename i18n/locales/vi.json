@@ -46,6 +46,7 @@
   },
   "layout": {
     "admin": "Quản lý",
+    "adminMenu": "Quản lý",
     "logout": "Đăng xuất"
   },
   "footer": {

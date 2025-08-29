@@ -194,11 +194,11 @@ const selectedStudents = ref<Student[]>([])
 
 // Status filter options
 const { t } = useI18n()
-const statusItems = [
+const statusItems = ref([
   { id: 'all', label: t('admin.search.all') },
   { id: 'paid', label: t('admin.search.paid') },
   { id: 'unpaid', label: t('admin.search.unpaid') }
-]
+])
 
 // Sorting state for table (client-side sorting as in test2.vue)
 const sorting = ref([

@@ -46,6 +46,7 @@
   },
   "layout": {
     "admin": "Admin",
+    "adminMenu": "Admin",
     "logout": "Sign out"
   },
   "footer": {

@@ -46,12 +46,15 @@
               </div>
             </div>
 
-            <!-- Admin button with enhanced styling -->
-            <UButton v-if="currentUser?.role === 'admin'" to="/admin"
-              class="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
-              icon="i-heroicons-cog-6-tooth" size="sm">
-              <span class="hidden sm:inline">{{ t('layout.admin') }}</span>
-            </UButton>
+            <!-- Admin dropdown menu with enhanced styling -->
+            <UDropdownMenu v-if="currentUser?.role === 'admin'" :items="adminMenuItems"
+              :popper="{ placement: 'bottom-end' }">
+              <UButton
+                class="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+                icon="i-heroicons-cog-6-tooth" size="sm" trailing-icon="i-heroicons-chevron-down">
+                <span class="hidden sm:inline">{{ t('layout.adminMenu') }}</span>
+              </UButton>
+            </UDropdownMenu>
 
             <!-- Logout button -->
             <UButton @click="signOut({ redirectTo: '/login' })" variant="ghost" size="sm"
@@ -82,29 +85,19 @@
         <div class="text-center space-y-4">
           <!-- Social Links -->
           <div class="flex justify-center items-center space-x-6">
-            <UButton 
-              to="https://github.com/ptkdrake/classfund" 
-              target="_blank" 
-              variant="ghost" 
-              size="sm"
-              class="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors"
-            >
+            <UButton to="https://github.com/ptkdrake/classfund" target="_blank" variant="ghost" size="sm"
+              class="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors">
               <UIcon name="i-simple-icons-github" class="w-5 h-5" />
               <span class="ml-2 hidden sm:inline">{{ t('footer.github') }}</span>
             </UButton>
-            
-            <UButton 
-              to="https://facebook.com/ptkdrake.real" 
-              target="_blank" 
-              variant="ghost" 
-              size="sm"
-              class="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors"
-            >
+
+            <UButton to="https://facebook.com/ptkdrake.real" target="_blank" variant="ghost" size="sm"
+              class="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
               <UIcon name="i-simple-icons-facebook" class="w-5 h-5" />
               <span class="ml-2 hidden sm:inline">{{ t('footer.facebook') }}</span>
             </UButton>
           </div>
-          
+
           <!-- Copyright -->
           <div class="text-sm text-gray-500 dark:text-gray-400">
             <p>&copy; {{ currentYear }} {{ t('brand.copyright') }}</p>
@@ -115,7 +108,9 @@
   </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
+import type { DropdownMenuItem } from '@nuxt/ui'
+
 const { t } = useI18n()
 const { loggedIn, user: currentUser, signOut } = useAuth()
 
@@ -126,6 +121,22 @@ const isDark = computed(() => colorMode.value === 'dark')
 const toggleColorMode = () => {
   colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
 }
+
+// Admin dropdown menu items
+const adminMenuItems = ref < DropdownMenuItem[][] > ([
+  [
+    {
+      label: t('layout.admin'),
+      icon: 'i-heroicons-users',
+      onSelect() {navigateTo('/admin')}
+    },
+    {
+      label: t('settings.title'),
+      icon: 'i-heroicons-cog-6-tooth',
+      onSelect() {navigateTo('/admin/settings')}
+    }
+  ]
+])
 
 // Current year for footer
 const currentYear = new Date().getFullYear()
