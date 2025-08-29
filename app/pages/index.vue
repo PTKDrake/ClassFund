@@ -25,8 +25,8 @@
         </div>
         <template #fallback>
           <div class="mt-4 p-4 bg-gray-100 dark:bg-gray-800 rounded-xl animate-pulse">
-            <div class="h-6 bg-gray-300 dark:bg-gray-700 rounded mx-auto w-64 mb-2"></div>
-            <div class="h-4 bg-gray-300 dark:bg-gray-700 rounded mx-auto w-48"></div>
+            <div class="h-6 bg-gray-300 dark:bg-gray-700 rounded mx-auto w-64 mb-2"/>
+            <div class="h-4 bg-gray-300 dark:bg-gray-700 rounded mx-auto w-48"/>
           </div>
         </template>
       </ClientOnly>
@@ -38,7 +38,7 @@
         <ClientOnly>
           <!-- Loading State -->
           <div v-if="!currentUser || pending" class="text-center py-12">
-            <div class="enhanced-spinner mx-auto mb-6"></div>
+            <div class="enhanced-spinner mx-auto mb-6"/>
             <div class="space-y-2">
               <p class="text-lg font-medium text-gray-900 dark:text-gray-100">{{ t('home.loading.title') }}</p>
               <p class="text-sm text-gray-500 dark:text-gray-400">{{ t('home.loading.subtitle') }}</p>
@@ -152,20 +152,23 @@
                   class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50">
                   <div class="qr-container mx-auto rounded-xl shadow-md overflow-hidden">
                     <!-- Loading State -->
-                    <div v-if="isGeneratingQR"
+                    <div
+v-if="isGeneratingQR"
                       class="w-full h-full flex items-center justify-center bg-gray-50 dark:bg-gray-800">
                       <div class="text-center">
-                        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
+                        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"/>
                         <p class="text-sm text-gray-500 dark:text-gray-400">{{ t('home.qr.loading') }}</p>
                       </div>
                     </div>
 
                     <!-- QR Code Image -->
-                    <img v-else-if="qrCodeUrl && !qrError" :src="qrCodeUrl" :alt="t('home.qr.alt')"
-                      class="w-full h-full object-cover" @error="onImageError" />
+                    <img
+v-else-if="qrCodeUrl && !qrError" :src="qrCodeUrl" :alt="t('home.qr.alt')"
+                      class="w-full h-full object-cover" @error="onImageError" >
 
                     <!-- Error State -->
-                    <div v-else-if="qrError"
+                    <div
+v-else-if="qrError"
                       class="w-full h-full flex items-center justify-center bg-red-50 dark:bg-red-900/20">
                       <div class="text-center p-4">
                         <UIcon name="i-heroicons-exclamation-triangle" class="h-8 w-8 text-red-500 mx-auto mb-2" />
@@ -185,14 +188,16 @@
 
                 <!-- Download Button -->
                 <div class="space-y-3 w-full max-w-xs">
-                  <UButton @click="downloadQRCode" variant="outline" size="lg" icon="i-heroicons-arrow-down-tray"
-                    class="w-full">
+                  <UButton
+variant="outline" size="lg" icon="i-heroicons-arrow-down-tray" class="w-full"
+                    @click="downloadQRCode">
                     {{ t('home.actions.downloadQR') }}
                   </UButton>
 
                   <!-- Refresh QR Button for debugging -->
-                  <UButton @click="forceGenerateQR" variant="ghost" size="sm" icon="i-heroicons-arrow-path"
-                    class="w-full text-xs">
+                  <UButton
+variant="ghost" size="sm" icon="i-heroicons-arrow-path" class="w-full text-xs"
+                    @click="forceGenerateQR">
                     {{ t('home.actions.refreshQR') }}
                   </UButton>
                 </div>
@@ -289,10 +294,10 @@
           <template #fallback>
             <div class="text-center py-12">
               <div class="animate-pulse space-y-4">
-                <div class="w-16 h-16 bg-gray-300 dark:bg-gray-600 rounded-full mx-auto"></div>
+                <div class="w-16 h-16 bg-gray-300 dark:bg-gray-600 rounded-full mx-auto"/>
                 <div class="space-y-2">
-                  <div class="h-4 w-32 bg-gray-300 dark:bg-gray-600 rounded mx-auto"></div>
-                  <div class="h-3 w-24 bg-gray-300 dark:bg-gray-600 rounded mx-auto"></div>
+                  <div class="h-4 w-32 bg-gray-300 dark:bg-gray-600 rounded mx-auto"/>
+                  <div class="h-3 w-24 bg-gray-300 dark:bg-gray-600 rounded mx-auto"/>
                 </div>
               </div>
             </div>
@@ -304,6 +309,7 @@
 </template>
 
 <script setup>
+import anyAscii from 'any-ascii'
 definePageMeta({
   // Using default layout
 })
@@ -311,7 +317,6 @@ const { t } = useI18n()
 
 const { user: currentUser } = useAuth()
 const toast = useToast()
-import anyAscii from 'any-ascii'
 
 // Fetch student payment data only if studentId exists
 const { data: studentData, pending, error } = useLazyFetch(() => {

@@ -69,7 +69,7 @@ export default defineEventHandler(async (event) => {
       }
     })
 
-    let result: { created: number, updated: number, errors: string[] } = {
+    const result: { created: number, updated: number, errors: string[] } = {
       created: 0,
       updated: 0,
       errors: []

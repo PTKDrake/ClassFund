@@ -1,5 +1,6 @@
 import { tServer } from '~~/server/utils/i18n'
-import { saveSettings, PaymentSettings } from '~~/server/utils/settings'
+import type { PaymentSettings } from '~~/server/utils/settings';
+import { saveSettings } from '~~/server/utils/settings'
 
 export default defineEventHandler(async (event) => {
   try {

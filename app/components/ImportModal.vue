@@ -1,9 +1,6 @@
 <template>
-  <UModal
-    :close="{ onClick: () => emit('close', false) }"
-    :title="t('import.title')"
-    :description="t('import.description')"
-  >
+  <UModal :close="{ onClick: () => emit('close', false) }" :title="t('import.title')"
+    :description="t('import.description')">
     <template #body>
       <div class="space-y-6">
         <!-- Import Mode Tabs -->
@@ -14,70 +11,60 @@
               <div class="text-sm font-medium text-gray-700 dark:text-gray-300">
                 {{ t('import.file.choose') }}
               </div>
-          
-          <div
-            @drop="handleDrop"
-            @dragover.prevent
-            @dragenter.prevent
-            :class="[
-              'border-2 border-dashed rounded-lg p-6 text-center transition-colors',
-              isDragging ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/10' : 'border-gray-300 dark:border-gray-600'
-            ]"
-          >
-            <input
-              ref="fileInput"
-              type="file"
-              accept=".xlsx,.xls,.csv"
-              @change="handleFileSelect"
-              class="hidden"
-            />
-            
-            <div v-if="!selectedFile" class="space-y-4">
-              <div class="w-16 h-16 mx-auto bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
-                <UIcon name="i-heroicons-document-arrow-up" class="h-8 w-8 text-gray-500 dark:text-gray-400" />
-              </div>
-              <div>
-                <p class="text-lg font-medium text-gray-900 dark:text-gray-100">
-                  {{ t('import.file.dragOr') }} 
-                  <button @click="fileInput?.click()" class="text-primary-600 hover:text-primary-700 underline">
-                    {{ t('import.file.chooseFile') }}
-                  </button>
-                </p>
-                <p class="text-sm text-gray-500 dark:text-gray-400">
-                  {{ t('import.file.support') }}
-                </p>
-              </div>
-            </div>
-            
-            <div v-else class="space-y-3">
-              <div class="flex items-center justify-center space-x-2">
-                <UIcon name="i-heroicons-document-text" class="h-6 w-6 text-primary-600" />
-                <span class="font-medium text-gray-900 dark:text-gray-100">{{ selectedFile.name }}</span>
-              </div>
-              <div class="text-sm text-gray-500 dark:text-gray-400">
-                {{ formatFileSize(selectedFile.size) }} • {{ getFileType(selectedFile.name) }}
-              </div>
-              <UButton @click="clearFile" size="sm" variant="ghost" icon="i-heroicons-x-mark">
-                {{ t('import.file.remove') }}
-              </UButton>
-            </div>
-          </div>
-        </div>
 
-              <!-- Format Guide for File Import -->
-              <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
-          <div class="flex items-start space-x-3">
-            <UIcon name="i-heroicons-information-circle" class="h-5 w-5 text-blue-600 dark:text-blue-400 mt-0.5" />
-            <div class="text-sm">
-              <p class="font-medium text-blue-900 dark:text-blue-100 mb-2">{{ t('import.formatGuide.title') }}</p>
-              <div class="space-y-1 text-blue-700 dark:text-blue-300">
-                <p>{{ t('import.formatGuide.line1') }}</p>
-                <p>{{ t('import.formatGuide.line2') }}</p>
-                <p>{{ t('import.formatGuide.line3') }}</p>
-                <p>{{ t('import.formatGuide.line4') }}</p>
+              <div :class="[
+                'border-2 border-dashed rounded-lg p-6 text-center transition-colors',
+                isDragging ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/10' : 'border-gray-300 dark:border-gray-600'
+              ]" @drop="handleDrop" @dragover.prevent @dragenter.prevent>
+                <input ref="fileInput" type="file" accept=".xlsx,.xls,.csv" class="hidden" @change="handleFileSelect">
+
+                <div v-if="!selectedFile" class="space-y-4">
+                  <div
+                    class="w-16 h-16 mx-auto bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
+                    <UIcon name="i-heroicons-document-arrow-up" class="h-8 w-8 text-gray-500 dark:text-gray-400" />
+                  </div>
+                  <div>
+                    <p class="text-lg font-medium text-gray-900 dark:text-gray-100">
+                      {{ t('import.file.dragOr') }}
+                      <button class="text-primary-600 hover:text-primary-700 underline" @click="fileInput?.click()">
+                        {{ t('import.file.chooseFile') }}
+                      </button>
+                    </p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">
+                      {{ t('import.file.support') }}
+                    </p>
+                  </div>
+                </div>
+
+                <div v-else class="space-y-3">
+                  <div class="flex items-center justify-center space-x-2">
+                    <UIcon name="i-heroicons-document-text" class="h-6 w-6 text-primary-600" />
+                    <span class="font-medium text-gray-900 dark:text-gray-100">{{ selectedFile.name }}</span>
+                  </div>
+                  <div class="text-sm text-gray-500 dark:text-gray-400">
+                    {{ formatFileSize(selectedFile.size) }} • {{ getFileType(selectedFile.name) }}
+                  </div>
+                  <UButton size="sm" variant="ghost" icon="i-heroicons-x-mark" @click="clearFile">
+                    {{ t('import.file.remove') }}
+                  </UButton>
+                </div>
               </div>
             </div>
-          </div>
+
+            <!-- Format Guide for File Import -->
+            <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
+              <div class="flex items-start space-x-3">
+                <UIcon name="i-heroicons-information-circle" class="h-5 w-5 text-blue-600 dark:text-blue-400 mt-0.5" />
+                <div class="text-sm">
+                  <p class="font-medium text-blue-900 dark:text-blue-100 mb-2">{{ t('import.formatGuide.title') }}</p>
+                  <div class="space-y-1 text-blue-700 dark:text-blue-300">
+                    <p>{{ t('import.formatGuide.line1') }}</p>
+                    <p>{{ t('import.formatGuide.line2') }}</p>
+                    <p>{{ t('import.formatGuide.line3') }}</p>
+                    <p>{{ t('import.formatGuide.line4') }}</p>
+                  </div>
+                </div>
+              </div>
             </div>
 
           </template>
@@ -92,17 +79,12 @@
               <div class="space-y-4">
                 <!-- Paste Area -->
                 <div class="relative">
-                  <UTextarea
-                    v-model="clipboardData"
-                    :rows="10"
-                    :placeholder="t('import.clipboard.placeholder')"
-                    class="w-full font-mono text-sm"
-                    @input="processClipboardData"
-                    @change="processClipboardData"
-                    @paste="processClipboardData"
-                  />
+                  <UTextarea v-model="clipboardData" :rows="10" :placeholder="t('import.clipboard.placeholder')"
+                    class="w-full font-mono text-sm" @input="processClipboardData" @change="processClipboardData"
+                    @paste="processClipboardData" />
                   <div class="absolute top-2 right-2">
-                    <UButton @click="pasteFromClipboard" size="xs" variant="ghost" icon="i-heroicons-clipboard-document">
+                    <UButton size="xs" variant="ghost" icon="i-heroicons-clipboard-document"
+                      @click="pasteFromClipboard">
                       Paste
                     </UButton>
                   </div>
@@ -113,7 +95,8 @@
                   <div class="flex items-center space-x-3">
                     <UIcon name="i-heroicons-bars-3-bottom-left" class="h-5 w-5 text-gray-500 dark:text-gray-400" />
                     <div>
-                      <p class="text-sm font-medium text-gray-900 dark:text-gray-100">{{ t('import.headerToggle.title') }}</p>
+                      <p class="text-sm font-medium text-gray-900 dark:text-gray-100">{{ t('import.headerToggle.title')
+                        }}</p>
                       <p class="text-xs text-gray-500 dark:text-gray-400">{{ t('import.headerToggle.subtitle') }}</p>
                     </div>
                   </div>
@@ -122,11 +105,14 @@
               </div>
 
               <!-- Format Guide for Clipboard -->
-              <div class="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4">
+              <div
+                class="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4">
                 <div class="flex items-start space-x-3">
-                  <UIcon name="i-heroicons-information-circle" class="h-5 w-5 text-green-600 dark:text-green-400 mt-0.5" />
+                  <UIcon name="i-heroicons-information-circle"
+                    class="h-5 w-5 text-green-600 dark:text-green-400 mt-0.5" />
                   <div class="text-sm">
-                    <p class="font-medium text-green-900 dark:text-green-100 mb-2">{{ t('import.clipboardGuide.title') }}</p>
+                    <p class="font-medium text-green-900 dark:text-green-100 mb-2">{{ t('import.clipboardGuide.title')
+                      }}</p>
                     <div class="space-y-1 text-green-700 dark:text-green-300">
                       <p>{{ t('import.clipboardGuide.line1') }}</p>
                       <p>{{ t('import.clipboardGuide.line2') }}</p>
@@ -156,15 +142,19 @@
             <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
               <thead class="bg-gray-50 dark:bg-gray-800">
                 <tr>
-                  <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">{{ t('import.preview.table.order') }}</th>
-                  <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">{{ t('import.preview.table.studentId') }}</th>
-                  <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">{{ t('import.preview.table.fullName') }}</th>
-                  <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">{{ t('import.preview.table.status') }}</th>
+                  <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">{{
+                    t('import.preview.table.order') }}</th>
+                  <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">{{
+                    t('import.preview.table.studentId') }}</th>
+                  <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">{{
+                    t('import.preview.table.fullName') }}</th>
+                  <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">{{
+                    t('import.preview.table.status') }}</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-                <tr v-for="(item, index) in previewData" :key="index" 
-                    :class="item.errors.length > 0 ? 'bg-red-50 dark:bg-red-900/10' : 'bg-white dark:bg-gray-900'">
+                <tr v-for="(item, index) in previewData" :key="index"
+                  :class="item.errors.length > 0 ? 'bg-red-50 dark:bg-red-900/10' : 'bg-white dark:bg-gray-900'">
                   <td class="px-4 py-2 text-sm text-gray-900 dark:text-gray-100">{{ item.order }}</td>
                   <td class="px-4 py-2 text-sm font-mono text-gray-900 dark:text-gray-100">{{ item.studentId }}</td>
                   <td class="px-4 py-2 text-sm text-gray-900 dark:text-gray-100">{{ item.fullName }}</td>
@@ -184,11 +174,14 @@
           </div>
 
           <!-- Validation Errors Summary -->
-          <div v-if="validationErrors.length > 0" class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4">
+          <div v-if="validationErrors.length > 0"
+            class="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4">
             <div class="flex items-start space-x-3">
               <UIcon name="i-heroicons-exclamation-triangle" class="h-5 w-5 text-red-600 dark:text-red-400 mt-0.5" />
               <div class="text-sm">
-                <p class="font-medium text-red-900 dark:text-red-100 mb-2">{{ t('import.preview.summaryTitle', { count: validationErrors.length }) }}</p>
+                <p class="font-medium text-red-900 dark:text-red-100 mb-2">{{ t('import.preview.summaryTitle', {
+                  count:
+                  validationErrors.length }) }}</p>
                 <ul class="space-y-1 text-red-700 dark:text-red-300">
                   <li v-for="error in validationErrors.slice(0, 5)" :key="error" class="list-disc list-inside">
                     {{ error }}
@@ -217,16 +210,11 @@
 
     <template #footer>
       <div class="flex flex-col-reverse sm:flex-row sm:justify-end gap-3 w-full">
-        <UButton @click="handleCancel" variant="ghost" type="button" class="w-full sm:w-auto">
+        <UButton variant="ghost" type="button" class="w-full sm:w-auto" @click="handleCancel">
           {{ t('common.cancel') }}
         </UButton>
-        <UButton 
-          @click="handleImport"
-          :loading="importing" 
-          :disabled="!canImport"
-          class="btn-primary w-full sm:w-auto"
-          icon="i-heroicons-arrow-down-tray"
-        >
+        <UButton :loading="importing" :disabled="!canImport" class="btn-primary w-full sm:w-auto"
+          icon="i-heroicons-arrow-down-tray" @click="handleImport">
           {{ t('import.footer.import', { count: previewData?.length || 0 }) }}
         </UButton>
       </div>
@@ -241,7 +229,7 @@ import * as XLSX from 'xlsx'
 import type { SelectMenuItem } from '@nuxt/ui'
 
 const { t } = useI18n()
-const emit = defineEmits<{ 
+const emit = defineEmits<{
   close: [boolean]
 }>()
 
@@ -276,27 +264,27 @@ const importTabs = [
     value: 'file',
     label: 'Upload File',
     icon: 'i-heroicons-document-arrow-up',
-    slot: 'file'
+    slot: 'file' as const
   },
   {
-    value: 'clipboard', 
+    value: 'clipboard',
     label: 'Paste Clipboard',
     icon: 'i-heroicons-clipboard-document',
-    slot: 'clipboard'
+    slot: 'clipboard' as const
   }
 ]
 
 // Computed
 const validationErrors = computed(() => {
   if (!previewData.value) return []
-  
+
   const errors: string[] = []
   previewData.value.forEach((item, index) => {
     item.errors.forEach((error: string) => {
       errors.push(`Dòng ${index + 2}: ${error}`)
     })
   })
-  
+
   return errors
 })
 
@@ -305,7 +293,7 @@ const canImport = computed(() => {
   const hasData = importTab.value === 'file' ? !!selectedFile.value : !!clipboardData.value.trim()
   const hasPreviewData = previewData.value && previewData.value.length > 0
   const hasNoErrors = validationErrors.value.length === 0
-  
+
   return hasData && hasPreviewData && hasNoErrors
 })
 
@@ -320,7 +308,7 @@ const handleFileSelect = (event: Event) => {
 const handleDrop = (event: DragEvent) => {
   event.preventDefault()
   isDragging.value = false
-  
+
   if (event.dataTransfer?.files && event.dataTransfer.files[0]) {
     processFile(event.dataTransfer.files[0])
   }
@@ -369,7 +357,7 @@ const processClipboardData = () => {
     const processedData = dataLines.map((line, index) => {
       // Split by tabs (or multiple whitespaces as fallback)
       const columns = line.split(/\t+/).map(col => col.trim())
-      
+
       // If no tabs found, try splitting by multiple spaces
       if (columns.length === 1) {
         const spaceColumns = line.split(/\s{2,}/).map(col => col.trim())
@@ -412,7 +400,7 @@ const processFile = async (file: File) => {
   }
 
   selectedFile.value = file
-  
+
   try {
     if (file.name.toLowerCase().endsWith('.csv')) {
       await parseCSV(file)
@@ -455,12 +443,12 @@ const parseExcel = (file: File): Promise<void> => {
         const firstSheet = workbook.Sheets[firstSheetName]
         if (!firstSheet) throw new Error('Sheet not found in Excel file')
         const jsonData = XLSX.utils.sheet_to_json(firstSheet, { header: 1 })
-        
+
         // Convert to objects with headers
         if (jsonData.length > 1) {
           const headers = jsonData[0] as string[]
           const rows = jsonData.slice(1) as any[][]
-          
+
           const objects = rows.map(row => {
             const obj: any = {}
             headers.forEach((header, index) => {
@@ -470,7 +458,7 @@ const parseExcel = (file: File): Promise<void> => {
             })
             return obj
           }).filter(obj => Object.values(obj).some(val => val && val.toString().trim()))
-          
+
           processData(objects)
         }
         resolve()
@@ -487,7 +475,7 @@ const processData = (data: any[]) => {
   const processedData = data.map((row, index) => {
     // Normalize headers - handle both uppercase and lowercase, with/without spaces
     const normalizeKey = (key: string) => key.toString().toLowerCase().replace(/\s+/g, '')
-    
+
     // Find the correct keys for STT, MSV, HOTEN
     const keys = Object.keys(row)
     const orderKey = keys.find(k => ['stt', 'so', 'thu', 'tu'].some(term => normalizeKey(k).includes(term))) || keys[0]
@@ -495,9 +483,9 @@ const processData = (data: any[]) => {
     const nameKey = keys.find(k => ['hoten', 'ten', 'ho', 'name', 'fullname'].some(term => normalizeKey(k).includes(term))) || keys[2]
 
     const safeOrderKey = orderKey || keys[0] || ''
-    const safeStudentIdKey = studentIdKey || keys[1] || ''  
+    const safeStudentIdKey = studentIdKey || keys[1] || ''
     const safeNameKey = nameKey || keys[2] || ''
-    
+
     const order = parseInt((safeOrderKey && row[safeOrderKey]) || '') || (index + 1)
     const studentId = ((safeStudentIdKey && row[safeStudentIdKey]) || '').toString().trim()
     const fullName = ((safeNameKey && row[safeNameKey]) || '').toString().trim()
@@ -524,18 +512,18 @@ const processData = (data: any[]) => {
 const isValidFile = (file: File): boolean => {
   const maxSize = 5 * 1024 * 1024 // 5MB
   const allowedTypes = ['.xlsx', '.xls', '.csv']
-  
+
   if (file.size > maxSize) {
     // Show error toast
     return false
   }
-  
+
   const extension = '.' + file.name.split('.').pop()?.toLowerCase()
   if (!allowedTypes.includes(extension)) {
     // Show error toast
     return false
   }
-  
+
   return true
 }
 
@@ -592,17 +580,17 @@ const handleImport = async () => {
 
   try {
     importing.value = true
-    
+
     // Filter out items with errors
     const validData = previewData.value.filter(item => item.errors.length === 0)
-    
+
     await props.onImport?.(validData.map(item => ({
       order: item.order,
       studentId: item.studentId,
       fullName: item.fullName,
       importMode: importMode.value
     })))
-    
+
     emit('close', false)
   } catch (error) {
     console.error('Import error:', error)

@@ -2,8 +2,6 @@ import { qrCache } from '~~/server/database/schema'
 import { tServer } from '~~/server/utils/i18n'
 import { QRPay, BanksObject } from 'vietnam-qr-pay'
 import QRCodeStyling from 'qr-code-styling'
-import fs from 'fs'
-import path from 'path'
 import { createHash } from 'crypto'
 import nodeCanvas from 'canvas'
 import { JSDOM } from 'jsdom'
@@ -140,7 +138,7 @@ export default defineEventHandler(async (event) => {
     // Build the QR content
     const qrContent = vietQR.build()
 
-    let logoDataUrl: string | undefined = `data:image/png;base64,${logo}`
+    const logoDataUrl: string | undefined = `data:image/png;base64,${logo}`
 
     // Create QR code with styling (optimized for Node.js environment)
     const qrCodeStyling = new QRCodeStyling({

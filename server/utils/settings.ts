@@ -1,6 +1,5 @@
 import { getDB } from './db'
 import { settings } from '../database/schema/app'
-import { eq } from 'drizzle-orm'
 import { runtimeConfig } from '~~/server/utils/runtimeConfig'
 import { BanksObject } from 'vietnam-qr-pay'
 

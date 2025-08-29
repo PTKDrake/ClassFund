@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300">
     <!-- Background Pattern -->
-    <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
+    <div class="absolute inset-0 bg-grid-pattern opacity-5"/>
     
     <div class="relative max-w-md w-full mx-4 space-y-8">
       <!-- Header Section -->
@@ -45,12 +45,12 @@
 
           <!-- Google Sign In Button -->
           <UButton 
-            @click="handleGoogleSignIn()" 
-            block
-            size="xl" 
-            :loading="loading"
+            block 
+            size="xl"
+            :loading="loading" 
             class="bg-white hover:bg-gray-50 text-gray-700 border border-gray-300 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-200 dark:border-gray-600"
             icon="i-logos-google-icon"
+            @click="handleGoogleSignIn()"
           >
           {{ t('login.buttonGoogle') }}
           </UButton>

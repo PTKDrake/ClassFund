@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-red-50 via-white to-orange-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300">
     <!-- Background Pattern -->
-    <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
+    <div class="absolute inset-0 bg-grid-pattern opacity-5"/>
     
     <div class="relative max-w-lg w-full mx-4 space-y-8">
       <!-- Error Icon -->

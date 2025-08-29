@@ -67,7 +67,7 @@
 
     <template #footer>
       <div class="flex flex-col-reverse sm:flex-row sm:justify-end gap-3 w-full">
-        <UButton @click="handleCancel" variant="ghost" type="button" class="w-full sm:w-auto">
+        <UButton variant="ghost" type="button" class="w-full sm:w-auto" @click="handleCancel">
           {{ t('common.cancel') }}
         </UButton>
         <UButton 

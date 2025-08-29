@@ -1,11 +1,11 @@
-import { betterAuth } from "better-auth"
-import { admin } from "better-auth/plugins"
-import { drizzleAdapter } from "better-auth/adapters/drizzle"
-import { getDB } from "./db"
-import { runtimeConfig } from "./runtimeConfig"
+import {betterAuth} from "better-auth"
+import {admin} from "better-auth/plugins"
+import {drizzleAdapter} from "better-auth/adapters/drizzle"
+import {getDB} from "./db"
+import {runtimeConfig} from "./runtimeConfig"
 import * as schema from "../database/schema"
-import type { User } from "~~/shared/utils/types"
-import type { H3Event } from "h3"
+import type {User} from "~~/shared/utils/types"
+import type {H3Event} from "h3"
 
 export const createBetterAuth = () => betterAuth({
   baseURL: runtimeConfig.public.baseURL,
@@ -85,10 +85,9 @@ export const useServerAuth = () => {
 export const getAuthSession = async (event: H3Event) => {
   const headers = event.headers
   const serverAuth = useServerAuth()
-  const session = await serverAuth.api.getSession({
+  return await serverAuth.api.getSession({
     headers
   })
-  return session
 }
 
 export const requireAuth = async (event: H3Event) => {

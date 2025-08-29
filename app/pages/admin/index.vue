@@ -18,10 +18,12 @@
           </div>
         </div>
         <div class="flex flex-col sm:flex-row gap-3">
-          <UButton @click="openImportModal" class="btn-secondary" icon="i-heroicons-arrow-down-tray"
-            :label="t('admin.buttons.import')" size="lg" />
-          <UButton @click="openAddStudentModal" class="btn-primary" icon="i-heroicons-plus" :label="t('admin.buttons.addStudent')"
-            size="lg" />
+          <UButton
+class="btn-secondary" icon="i-heroicons-arrow-down-tray" :label="t('admin.buttons.import')"
+            size="lg" @click="openImportModal" />
+          <UButton
+class="btn-primary" icon="i-heroicons-plus" :label="t('admin.buttons.addStudent')" size="lg"
+            @click="openAddStudentModal" />
         </div>
       </div>
 
@@ -87,34 +89,37 @@
 
           <!-- Search and Actions -->
           <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-            <UInput v-model="searchQuery" icon="i-heroicons-magnifying-glass" :placeholder="t('admin.search.placeholder')"
+            <UInput
+v-model="searchQuery" icon="i-heroicons-magnifying-glass" :placeholder="t('admin.search.placeholder')"
               class="w-full sm:w-64" />
-            <USelectMenu v-model="selectedStatus" value-key="id" :items="statusItems" :placeholder="t('admin.search.filterPlaceholder')"
+            <USelectMenu
+v-model="selectedStatus" value-key="id" :items="statusItems" :placeholder="t('admin.search.filterPlaceholder')"
               class="w-full sm:w-auto" />
           </div>
         </div>
 
         <!-- Bulk Actions (will be implemented with proper selection) -->
-        <div v-if="false && selectedStudents.length > 0"
+        <div
+v-if="false && selectedStudents.length > 0"
           class="flex items-center justify-between p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-700">
           <div class="flex items-center space-x-3">
             <span class="text-sm font-medium text-blue-700 dark:text-blue-300">
               {{ selectedStudents.length }} sinh viên được chọn
             </span>
-            <UButton @click="clearSelection" variant="ghost" size="xs" class="text-blue-600 hover:text-blue-700">
+            <UButton variant="ghost" size="xs" class="text-blue-600 hover:text-blue-700" @click="clearSelection">
               Bỏ chọn
             </UButton>
           </div>
           <div class="flex items-center space-x-2">
-            <UButton @click="bulkMarkPaid" size="sm" color="success" variant="outline">
+            <UButton size="sm" color="success" variant="outline" @click="bulkMarkPaid">
               <UIcon name="i-heroicons-check" class="h-4 w-4" />
               Đánh dấu đã đóng
             </UButton>
-            <UButton @click="bulkMarkUnpaid" size="sm" color="warning" variant="outline">
+            <UButton size="sm" color="warning" variant="outline" @click="bulkMarkUnpaid">
               <UIcon name="i-heroicons-x-mark" class="h-4 w-4" />
               Đánh dấu chưa đóng
             </UButton>
-            <UButton @click="bulkDelete" size="sm" color="error" variant="outline">
+            <UButton size="sm" color="error" variant="outline" @click="bulkDelete">
               <UIcon name="i-heroicons-trash" class="h-4 w-4" />
               Xóa
             </UButton>
@@ -123,7 +128,7 @@
       </div>
 
       <div v-if="status !== 'success' && !error" class="p-12 text-center">
-        <div class="enhanced-spinner mx-auto mb-6"></div>
+        <div class="enhanced-spinner mx-auto mb-6"/>
         <div class="space-y-2">
           <p class="text-lg font-medium text-gray-900 dark:text-gray-100">{{ t('admin.loading.title') }}</p>
           <p class="text-sm text-gray-500 dark:text-gray-400">{{ t('admin.loading.subtitle') }}</p>
@@ -144,22 +149,23 @@
         </div>
         <h3 class="text-xl font-bold text-gray-700 dark:text-gray-300 mb-2">{{ t('admin.empty.title') }}</h3>
         <p class="text-gray-500 dark:text-gray-400 mb-4">{{ t('admin.empty.subtitle') }}</p>
-        <UButton @click="openAddStudentModal" class="btn-primary" icon="i-heroicons-plus">
+        <UButton class="btn-primary" icon="i-heroicons-plus" @click="openAddStudentModal">
           {{ t('admin.buttons.addFirst') }}
         </UButton>
       </div>
 
       <div v-else>
         <!-- UTable with enhanced features -->
-        <UTable v-model:sorting="sorting" :columns="tableColumns as any" :data="data?.students" :pagination="pagination"
-          :loading="status !== 'success'" :error="error" class="w-full">
-        </UTable>
+        <UTable
+v-model:sorting="sorting" :columns="tableColumns as any" :data="data?.students" :pagination="pagination"
+          :loading="status !== 'success'" :error="error" class="w-full"/>
 
         <!-- Simple Pagination (align with test2.vue) -->
         <div class="flex justify-center border-t py-4">
-          <UPagination v-if="data?.total && data?.total > pagination.pageSize" :total="(data as any)?.total"
+          <UPagination
+v-if="data?.total && data?.total > pagination.pageSize" :total="(data as any)?.total"
             :items-per-page="pagination.pageSize" :default-page="pagination.pageIndex + 1"
-            @update:page="(p) => (pagination.pageIndex = p - 1)" show-edges color="primary" />
+            show-edges color="primary" @update:page="(p) => (pagination.pageIndex = p - 1)" />
         </div>
       </div>
     </div>
@@ -170,15 +176,15 @@
 </template>
 
 <script setup lang="ts">
-definePageMeta({
-  // Using default layout
-})
 import type { DropdownMenuItem, TableColumn } from '@nuxt/ui'
 import StudentModal from '~/components/StudentModal.vue'
 import ImportModal from '~/components/ImportModal.vue'
 import { h, ref, computed } from 'vue'
 import { UTable, UPagination, UInput, USelect, UButton, UBadge } from '#components'
 import type { Student, StatsResponse } from '~/types'
+definePageMeta({
+  // Using default layout
+})
 
 const toast = useToast()
 const overlay = useOverlay()

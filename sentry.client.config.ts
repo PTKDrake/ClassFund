@@ -3,7 +3,7 @@ import * as Sentry from "@sentry/nuxt";
 Sentry.init({
   // If set up, you can use your runtime config here
   // dsn: useRuntimeConfig().public.sentry.dsn,
-  dsn: "https://42d292a5067f24e55e779d15a21a255a@o4509920127811584.ingest.de.sentry.io/4509920129187920",
+  dsn: process.env.SENTRY_DSN,
 
   // We recommend adjusting this value in production, or using tracesSampler
   // for finer control
@@ -25,4 +25,8 @@ Sentry.init({
   
   // Setting this option to true will print useful information to the console while you're setting up Sentry.
   debug: false,
+
+  ignoreErrors: [
+    /zaloJSV2/i
+  ],
 });

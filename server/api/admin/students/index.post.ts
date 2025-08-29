@@ -1,7 +1,6 @@
 import { useDB } from "~~/server/utils/db"
 import { students } from "~~/server/database/schema"
 import { tServer } from '~~/server/utils/i18n'
-import { eq } from "drizzle-orm"
 import anyAscii from "any-ascii"
 
 export default defineEventHandler(async (event) => {

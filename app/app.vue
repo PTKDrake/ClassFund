@@ -9,8 +9,8 @@
 </template>
 
 <script lang="ts" setup>
-import { z } from 'zod'
-import { locales as zodLocales } from 'zod'
+import type { locales as zodLocales  } from 'zod';
+import { z  } from 'zod'
 
 // Global meta configuration
 const { t } = useI18n()

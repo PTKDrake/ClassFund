@@ -8,9 +8,10 @@ export default defineEventHandler(async (event) => {
     
     // Get settings from database
     const settings = await getSettings()
-    
     // getSettings() should never return null now due to fallbacks
-    return settings
+    return {
+      data: settings
+    }
   } catch (error) {
     console.error('Error fetching settings:', error)
     

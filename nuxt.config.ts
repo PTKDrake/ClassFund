@@ -1,5 +1,4 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import type { NuxtPage } from 'nuxt/schema'
 import { generateRuntimeConfig } from './server/utils/runtimeConfig'
 import { tServer } from './server/utils/i18n'
 
