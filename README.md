@@ -162,6 +162,23 @@ pnpm db:studio
    - Delete students
    - View payment statistics
 
+## Screenshots
+
+### Login Page
+Students authenticate using their @st.vimaru.edu.vn Google accounts:
+
+![Login Screenshot](login_screenshot.jpeg)
+
+### Payment Status - Paid
+Students who have already paid see a success confirmation:
+
+![Paid Status Screenshot](paid_screenshot.jpeg)
+
+### Payment Status - Unpaid
+Students who haven't paid yet see a QR code for payment:
+
+![Unpaid Status Screenshot](unpaid_screenshot.jpeg)
+
 ## Database Schema
 
 ### User Table (Better Auth)

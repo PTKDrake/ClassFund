@@ -32,12 +32,10 @@ watchEffect(() => {
 
 useHead({
   title: t('meta.title'),
-  meta: [
-    { name: 'description', content: t('meta.description') },
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' }
-  ],
-  link: [
-    { rel: 'icon', type: 'image/png', href: '/favicon.png', sizes: '96x96' },
-  ]
+})
+
+useSeoMeta({
+  ogSiteName: t('meta.title'),
+  ogImage: '/login_screenshot.jpeg'
 })
 </script>

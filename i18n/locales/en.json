@@ -48,6 +48,10 @@
     "admin": "Admin",
     "logout": "Sign out"
   },
+  "footer": {
+    "github": "GitHub",
+    "facebook": "Facebook"
+  },
   "home": {
     "hero": {
       "title": "TTM63 Class Fund System",

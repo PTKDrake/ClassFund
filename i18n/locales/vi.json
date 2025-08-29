@@ -48,6 +48,10 @@
     "admin": "Quản lý",
     "logout": "Đăng xuất"
   },
+  "footer": {
+    "github": "GitHub",
+    "facebook": "Facebook"
+  },
   "home": {
     "hero": {
       "title": "Hệ thống quỹ lớp TTM63",

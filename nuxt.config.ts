@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import type { NuxtPage } from 'nuxt/schema'
 import { generateRuntimeConfig } from './server/utils/runtimeConfig'
+import { tServer } from './server/utils/i18n'
 
 console.log(`Current NODE_ENV: ${process.env.NODE_ENV}`)
 
@@ -65,9 +66,11 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1, maximum-scale=5.0, minimum-scale=1.0',
       meta: [
         { name: 'apple-mobile-web-app-title', content: process.env.NUXT_APP_NAME },
+        { name: 'description', content: tServer('meta.description') },
       ],
       link: [
         { rel: 'icon', type: 'image/png', href: '/favicon.png', sizes: '96x96' },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicon.png' },
       ]
     }
   },

@@ -76,8 +76,36 @@
     <footer
       class="mt-auto border-t border-gray-200/30 dark:border-gray-700/30 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm">
       <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-        <div class="text-center text-sm text-gray-500 dark:text-gray-400">
-          <p>&copy; {{ currentYear }} {{ t('brand.copyright') }}</p>
+        <div class="text-center space-y-4">
+          <!-- Social Links -->
+          <div class="flex justify-center items-center space-x-6">
+            <UButton 
+              to="https://github.com/ptkdrake/classfund" 
+              target="_blank" 
+              variant="ghost" 
+              size="sm"
+              class="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors"
+            >
+              <UIcon name="i-simple-icons-github" class="w-5 h-5" />
+              <span class="ml-2 hidden sm:inline">{{ t('footer.github') }}</span>
+            </UButton>
+            
+            <UButton 
+              to="https://facebook.com/ptkdrake.real" 
+              target="_blank" 
+              variant="ghost" 
+              size="sm"
+              class="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors"
+            >
+              <UIcon name="i-simple-icons-facebook" class="w-5 h-5" />
+              <span class="ml-2 hidden sm:inline">{{ t('footer.facebook') }}</span>
+            </UButton>
+          </div>
+          
+          <!-- Copyright -->
+          <div class="text-sm text-gray-500 dark:text-gray-400">
+            <p>&copy; {{ currentYear }} {{ t('brand.copyright') }}</p>
+          </div>
         </div>
       </div>
     </footer>
