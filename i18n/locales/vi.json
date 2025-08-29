@@ -7,13 +7,13 @@
     "notice": "Thông báo"
   },
   "brand": {
-    "name": "Class Fund TTM63",
-    "university": "Vietnam Marine University",
+    "name": "Hãy đăng nhập để đóng quỹ lớp TTM63",
+    "university": "Unofficial Class Fund Management System",
     "copyright": "Class Fund Management System - PTKDrake"
   },
   "meta": {
     "title": "Class Fund Management - TTM63",
-    "description": "Hệ thống quản lý quỹ lớp TTM63 - Vimaru",
+    "description": "Hệ thống quản lý quỹ lớp TTM63",
     "errorTitle": "Lỗi {code} - Class Fund Management"
   },
   "error": {
@@ -370,6 +370,15 @@
       "invalidFormDesc": "Vui lòng điền đầy đủ các trường bắt buộc.",
       "saveTitle": "Lỗi lưu",
       "saveDesc": "Không thể lưu cài đặt. Vui lòng thử lại."
+    }
+  },
+  "banner": {
+    "revolution": {
+      "title": "Cộng hòa - Xã hội - Chủ nghĩa Việt Nam\nĐộc lập - Tự do - Hạnh phúc",
+      "description": "80 năm Cách mạng Tháng Tám – Mốc son chói lọi trong lịch sử dân tộc. Cùng nhìn lại quá khứ để vững bước tương lai, giữ vững độc lập, dựng xây phồn vinh.",
+      "years": "1945 - 2025",
+      "imageAlt": "Banner Kỷ niệm 80 năm Cách mạng Tháng Tám", 
+      "imagePlaceholder": "Banner Kỷ niệm Cách mạng"
     }
   },
   "server": {

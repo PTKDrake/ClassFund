@@ -65,6 +65,9 @@
       </div>
     </nav>
 
+    <!-- Revolution Anniversary Banner -->
+    <RevolutionBanner />
+
     <!-- Enhanced main content area -->
     <main class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
       <div class="min-h-[calc(100vh-12rem)]">
